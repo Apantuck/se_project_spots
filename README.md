@@ -10,8 +10,8 @@ This project is made so all elements are adaptive and display correctly on popul
 
 - [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
 
-**Github Link**
-https://github.com/Apantuck/se_project_spots
+**Github PagesLink**
+https://apantuck.github.io/se_project_spots/index.html
 
 **Video**
 (to do pending revisions)
