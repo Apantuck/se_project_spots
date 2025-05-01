@@ -1,8 +1,6 @@
 # Project 3: Spots
 
-**Intro**
-
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.
+This is the third project of the Software Engineering program at TripleTen. It was created using HTML and CSS, based on the design brief on Figma.
 
 **Project Features**
 
