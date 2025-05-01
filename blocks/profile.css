@@ -1,0 +1,132 @@
+.profile {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 34px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.4);
+}
+
+.profile__avatar {
+  margin-right: 20px;
+  height: 190px;
+  width: 190px;
+  border-radius: 8px;
+}
+
+.profile__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__name {
+  margin: 0 0 12px;
+  font-weight: 500;
+  font-size: 32px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
+}
+
+.profile__description {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(33, 33, 33, 0.7);
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
+}
+
+.profile__edit-btn {
+  margin-top: auto;
+  background-color: transparent;
+  opacity: 70%;
+  border: none;
+  text-align: left;
+  padding: 0;
+  height: 16px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.profile__edit-btn:hover {
+  opacity: 100%;
+}
+
+.profile__edit-btn > img {
+  margin-right: 8px;
+  /* This doesnt look quite right? Is there a better way? */
+  vertical-align: middle;
+}
+
+.profile__add-btn {
+  margin-left: auto;
+  margin-top: auto;
+  padding: 0;
+  width: 149px;
+  height: 52px;
+  background-color: rgba(33, 33, 33, 1);
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.profile__add-btn:hover {
+  background-color: rgba(33, 33, 33, 0.8);
+}
+
+.profile__add-btn > img {
+  margin-right: 8px;
+  width: 12px;
+  height: 12px;
+}
+
+@media screen and (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    padding-top: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile__avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 0 12px;
+  }
+
+  .profile__name {
+    size: 20px;
+    text-align: center;
+    margin-bottom: 6px;
+    max-width: 100%;
+  }
+
+  .profile__description {
+    text-align: center;
+    margin-bottom: 32px;
+    max-width: 100%;
+  }
+
+  .profile__column {
+    margin-bottom: 20px;
+  }
+
+  .profile__edit-btn {
+    text-align: center;
+  }
+
+  .profile__add-btn {
+    margin: 0;
+    width: 100%;
+    height: 52px;
+  }
+}
