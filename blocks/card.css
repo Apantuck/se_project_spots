@@ -32,6 +32,7 @@
   background-color: transparent;
   opacity: 40%;
   padding: 0;
+  cursor: pointer;
 }
 
 .card__like-btn:hover {
@@ -46,6 +47,7 @@
   .card__title {
     line-height: 1;
     max-width: 260px;
+    font-size: 16px;
   }
 
   .card__like-btn {
