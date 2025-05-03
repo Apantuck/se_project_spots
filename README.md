@@ -16,4 +16,4 @@ https://apantuck.github.io/se_project_spots/index.html
 
 **Video**
 
-(to do pending revisions)
+(https://drive.google.com/file/d/1SmnMAC3nEKhxY6MSpZSyLcWsSdLZduUT/view?usp=sharing)
