@@ -66,4 +66,5 @@ postModalForm.addEventListener("submit", function (evt) {
   console.log(postModalLinkInput.value);
   console.log(postModalCaptionInput.value);
   closeModal(postModal);
+  postModalForm.requestFullscreen();
 });
