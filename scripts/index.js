@@ -46,6 +46,8 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
+const cardTemplate = document.querySelector("#card_template");
+const cardContainer = document.querySelector(".cards__list");
 
 // Helper functions
 
@@ -88,12 +90,31 @@ postModalCloseBtn.addEventListener("click", function () {
 
 postModalForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
-  console.log(postModalLinkInput.value);
-  console.log(postModalCaptionInput.value);
+  // console.log(postModalLinkInput.value);
+  // console.log(postModalCaptionInput.value);
+  const newCard = getCardElement({
+    link: postModalLinkInput.value,
+    name: postModalCaptionInput.value,
+  });
+  cardContainer.prepend(newCard);
   closeModal(postModal);
   postModalForm.reset();
 });
 
+// cards
+
 initialCards.forEach(function (card) {
-  console.log(card.name);
+  const newCard = getCardElement(card);
+  cardContainer.prepend(newCard);
 });
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.content.cloneNode(true);
+  const cardImg = cardElement.querySelector(".card__img");
+  cardImg.setAttribute("src", data.link);
+  cardImg.setAttribute("alt", data.name);
+  const cardTitle = cardElement.querySelector(".card__title");
+  cardTitle.textContent = data.name;
+  // const cardLikeBtn = cardElement.querySelector(".card__like-btn");
+  return cardElement;
+}
