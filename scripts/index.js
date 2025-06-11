@@ -90,8 +90,6 @@ postModalCloseBtn.addEventListener("click", function () {
 
 postModalForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
-  // console.log(postModalLinkInput.value);
-  // console.log(postModalCaptionInput.value);
   const newCard = getCardElement({
     link: postModalLinkInput.value,
     name: postModalCaptionInput.value,
@@ -115,6 +113,9 @@ function getCardElement(data) {
   cardImg.setAttribute("alt", data.name);
   const cardTitle = cardElement.querySelector(".card__title");
   cardTitle.textContent = data.name;
-  // const cardLikeBtn = cardElement.querySelector(".card__like-btn");
+  const cardLikeBtn = cardElement.querySelector(".card__like-btn");
+  cardLikeBtn.addEventListener("click", () =>
+    cardLikeBtn.classList.toggle("card__like-btn_liked")
+  );
   return cardElement;
 }
