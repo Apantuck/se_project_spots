@@ -32,6 +32,38 @@
   font-weight: 500;
 }
 
+.modal__preview_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: min-content;
+}
+
+.modal__img {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+.modal__caption {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  color: white;
+  background-color: rgba(33, 33, 33, 1);
+  background-size: auto;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin: 0 auto 0 0;
+}
+
 .modal__close-btn {
   background-image: url(../images/icon-close-default.svg);
   border: none;
@@ -47,6 +79,16 @@
 
 .modal__close-btn:hover {
   background-image: url(../images/icon-close-hover.svg);
+}
+
+.modal__close-btn_preview {
+  background-image: url(../images/icon-close-variant-default.svg);
+  right: -52.5px;
+  top: 0;
+}
+
+.modal__close-btn_preview:hover {
+  background-image: url(../images/icon-close-variant-hover.svg);
 }
 
 .modal__title {
@@ -112,6 +154,11 @@
   .modal__close-btn {
     top: 12px;
     right: 12px;
+  }
+
+  .modal__close-btn_preview {
+    right: 0;
+    top: -48px;
   }
 
   .modal__title {

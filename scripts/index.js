@@ -22,6 +22,10 @@ const postModalCaptionInput = postModalForm.querySelector(
 
 const initialCards = [
   {
+    name: "Wide view",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
+  {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
@@ -48,6 +52,15 @@ const initialCards = [
 ];
 const cardTemplate = document.querySelector("#card_template");
 const cardContainer = document.querySelector(".cards__list");
+
+const previewModal = document.querySelector("#post-preview-modal");
+const previewModalImg = previewModal.querySelector(".modal__img");
+const previewModalCaption = previewModal.querySelector(".modal__caption");
+previewModal
+  .querySelector(".modal__close-btn")
+  .addEventListener("click", function () {
+    closeModal(previewModal);
+  });
 
 // Helper functions
 
@@ -111,6 +124,12 @@ function getCardElement(data) {
   const cardImg = cardElement.querySelector(".card__img");
   cardImg.setAttribute("src", data.link);
   cardImg.setAttribute("alt", data.name);
+  cardImg.addEventListener("click", () => {
+    previewModalImg.setAttribute("src", data.link);
+    previewModalImg.setAttribute("alt", data.name);
+    previewModalCaption.textContent = data.name;
+    openModal(previewModal);
+  });
   const cardTitle = cardElement.querySelector(".card__title");
   cardTitle.textContent = data.name;
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
