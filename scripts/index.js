@@ -2,8 +2,7 @@ const profileEditBtn = document.querySelector(".profile__edit-btn");
 const profileName = document.querySelector(".profile__name");
 const profileDesc = document.querySelector(".profile__description");
 const profileModal = document.querySelector("#edit-profile-modal");
-const profileModalForm = profileModal.querySelector(".modal__form");
-const profileModalCloseBtn = profileModal.querySelector(".modal__close-btn");
+const profileModalForm = document.forms["edit-profile-form"];
 const profileModalNameInput = profileModalForm.querySelector(
   "#profile-name-input"
 );
@@ -13,8 +12,7 @@ const profileModalDescInput = profileModalForm.querySelector(
 
 const postNewBtn = document.querySelector(".profile__add-btn");
 const postModal = document.querySelector("#new-post-modal");
-const postModalForm = postModal.querySelector(".modal__form");
-const postModalCloseBtn = postModal.querySelector(".modal__close-btn");
+const postModalForm = document.forms["new-post-form"];
 const postModalLinkInput = postModalForm.querySelector("#post-link-input");
 const postModalCaptionInput = postModalForm.querySelector(
   "#post-caption-input"
@@ -62,6 +60,15 @@ previewModal
     closeModal(previewModal);
   });
 
+// Modal close buttons
+const closeButtons = document.querySelectorAll(".modal__close-btn");
+closeButtons.forEach((btn) => {
+  btn.addEventListener("click", function (evt) {
+    const modal = evt.target.closest(".modal");
+    closeModal(modal);
+  });
+});
+
 // Helper functions
 
 function openModal(modal) {
@@ -80,10 +87,6 @@ profileEditBtn.addEventListener("click", function () {
   profileModalDescInput.value = profileDesc.textContent;
 });
 
-profileModalCloseBtn.addEventListener("click", function () {
-  closeModal(profileModal);
-});
-
 profileModalForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   profileName.textContent = profileModalNameInput.value;
@@ -95,10 +98,6 @@ profileModalForm.addEventListener("submit", function (evt) {
 
 postNewBtn.addEventListener("click", function () {
   openModal(postModal);
-});
-
-postModalCloseBtn.addEventListener("click", function () {
-  closeModal(postModal);
 });
 
 postModalForm.addEventListener("submit", function (evt) {

@@ -36,6 +36,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  column-gap: 8px;
   position: relative;
   width: min-content;
 }
@@ -43,8 +45,7 @@
 .modal__img {
   max-width: 80vw;
   max-height: 80vh;
-  width: auto;
-  height: auto;
+  width: max-content;
   object-fit: contain;
   display: block;
   margin-bottom: 8px;
@@ -149,6 +150,15 @@
 @media screen and (max-width: 600px) {
   .modal__container {
     padding: 12px 12px;
+  }
+
+  .modal__preview_container {
+    width: 100%;
+  }
+
+  .modal__img {
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .modal__close-btn {
