@@ -140,6 +140,7 @@
   line-height: 100%;
   color: rgba(252, 245, 229, 1);
   border-radius: 8px;
+  border: none;
   cursor: pointer;
   border: none;
 }
