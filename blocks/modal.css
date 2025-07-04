@@ -32,7 +32,7 @@
   font-weight: 500;
 }
 
-.modal__preview_container {
+.modal__preview-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -184,7 +184,7 @@
     padding: 12px 12px;
   }
 
-  .modal__preview_container {
+  .modal__preview-container {
     width: 100%;
   }
 

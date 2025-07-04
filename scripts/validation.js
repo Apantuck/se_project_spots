@@ -57,6 +57,14 @@ const disableButton = (btnElement) => {
   console.log("Button disabled");
 };
 
+const resetValidation = (formElement) => {
+  hideInputError(
+    settings,
+    formElement,
+    formElement.querySelector(settings.inputSelector)
+  );
+};
+
 const setEventListeners = (config, formElement) => {
   const inputList = Array.from(
     formElement.querySelectorAll(config.inputSelector)

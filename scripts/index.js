@@ -102,6 +102,7 @@ function closeModal(modal) {
 // Profile
 
 profileEditBtn.addEventListener("click", function () {
+  resetValidation(profileModalForm);
   openModal(profileModal);
   profileModalNameInput.value = profileName.textContent;
   profileModalDescInput.value = profileDesc.textContent;
@@ -130,6 +131,9 @@ postModalForm.addEventListener("submit", function (evt) {
   closeModal(postModal);
   postModalForm.reset();
   disableButton(postModalForm.querySelector(".modal__submit-btn"));
+  // the AI checker suggested the below line, but isnt it not necessary since the form doesnt reset when it closes
+  // and the form wont submit with invalid inputs?
+  resetValidation(postModalForm);
 });
 
 // cards
