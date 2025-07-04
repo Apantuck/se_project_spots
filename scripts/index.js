@@ -60,7 +60,9 @@ previewModal
     closeModal(previewModal);
   });
 
-// Modal close buttons
+// Modal closing functionality
+
+// by button
 const closeButtons = document.querySelectorAll(".modal__close-btn");
 closeButtons.forEach((btn) => {
   btn.addEventListener("click", function (evt) {
@@ -68,15 +70,33 @@ closeButtons.forEach((btn) => {
     closeModal(modal);
   });
 });
+// by clicking outside the modal content
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("click", function (evt) {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
+  });
+});
+// by pressing Escape key
+const closeOnEscapeCallback = (evt) => {
+  if (evt.key === "Escape") {
+    const modal = document.querySelector(".modal_is-opened");
+    closeModal(modal);
+  }
+};
 
 // Helper functions
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", closeOnEscapeCallback);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", closeOnEscapeCallback);
 }
 
 // Profile
@@ -109,6 +129,7 @@ postModalForm.addEventListener("submit", function (evt) {
   cardContainer.prepend(newCard);
   closeModal(postModal);
   postModalForm.reset();
+  disableButton(postModalForm.querySelector(".modal__submit-btn"));
 });
 
 // cards
