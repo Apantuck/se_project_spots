@@ -10,18 +10,20 @@
       content="places, points of interest, notable locations, tourism"
     />
     <title>Spots</title>
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="shortcut icon" href="favicon.ico" />
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/logo.svg" alt="Spot logo" class="header__logo" />
+        <img
+          src="<%=require('./images/logo.svg')%>"
+          alt="Spot logo"
+          class="header__logo"
+        />
       </header>
       <main class="content">
         <section class="profile page__section">
           <img
-            src="./images/avatar.jpg"
+            src="<%=require('./images/avatar.jpg')%>"
             alt="Current user's avatar"
             class="profile__avatar"
           />
@@ -38,11 +40,17 @@
               Pellentesque at nisl vestibulum, volutpat arcu vitae, pharetra.
             </p>
             <button type="button" class="profile__edit-btn">
-              <img src="./images/icon-edit.svg" alt="pencil icon" />Edit Profile
+              <img
+                src="<%=require('./images/icon-edit.svg')%>"
+                alt="pencil icon"
+              />Edit Profile
             </button>
           </div>
           <button type="button" class="profile__add-btn">
-            <img src="./images/icon-plus.svg" alt="plus icon" />New Post
+            <img
+              src="<%=require('./images/icon-plus.svg')%>"
+              alt="plus icon"
+            />New Post
           </button>
         </section>
         <section class="cards page__section">
@@ -146,7 +154,5 @@
         </div>
       </div>
     </div>
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validation.js"></script>
   </body>
 </html>
