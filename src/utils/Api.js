@@ -28,13 +28,17 @@ export default class Api {
     return this._editData("cards", "POST", data);
   }
 
-  //   likeCard(cardId) {
-  //     return this._editData(`cards/${cardId}/likes`, "PUT", { isLiked: true });
-  //   }
+  deleteCard(cardId) {
+    return this._editData(`cards/${cardId}`, "DELETE");
+  }
 
-  //   unlikeCard(cardId) {
-  //     return this._editData(`cards/${cardId}/likes`, "PUT", { isLiked: false });
-  //   }
+  likeCard(cardId) {
+    return this._editData(`cards/${cardId}/likes`, "PUT");
+  }
+
+  unlikeCard(cardId) {
+    return this._editData(`cards/${cardId}/likes`, "DELETE");
+  }
 
   _getData = (route) => {
     return fetch(`${this._baseUrl}/${route}`, {
