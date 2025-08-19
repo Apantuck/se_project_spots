@@ -133,7 +133,6 @@ profileEditBtn.addEventListener("click", function () {
 profileAvatarBtn.addEventListener("click", function () {
   resetValidation(profileAvatarModalForm);
   openModal(profileAvatarModal);
-  profileAvatarModalForm.avatar.value = profileAvatar.getAttribute("src");
 });
 
 profileModalForm.addEventListener("submit", function (evt) {
@@ -148,12 +147,12 @@ profileModalForm.addEventListener("submit", function (evt) {
     .then((userData) => {
       profileName.textContent = userData.name;
       profileDesc.textContent = userData.about;
+      closeModal(profileModal);
     })
     .catch((err) => {
       console.error(`Error updating user info: ${err}`);
     })
     .finally(() => {
-      closeModal(profileModal);
       submitBtn.textContent = "Save";
     });
 });
@@ -168,12 +167,12 @@ profileAvatarModalForm.addEventListener("submit", function (evt) {
     })
     .then((userData) => {
       profileAvatar.setAttribute("src", userData.avatar);
+      closeModal(profileAvatarModal);
     })
     .catch((err) => {
       console.error(`Error updating user avatar: ${err}`);
     })
     .finally(() => {
-      closeModal(profileAvatarModal);
       avatarBtn.textContent = "Save";
     });
 });
@@ -186,22 +185,23 @@ postNewBtn.addEventListener("click", function () {
 
 postModalForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
-  postModal.querySelector(".modal__btn_submit").textContent = "Saving...";
+  const submitBtn = postModal.querySelector(".modal__btn_submit");
+  submitBtn.textContent = "Saving...";
   api
     .addNewCard(getCardData())
     .then((card) => {
       const newCard = getCardElement(card);
       cardContainer.prepend(newCard);
+      closeModal(postModal);
+      postModalForm.reset();
+      disableButton(postModalForm.querySelector(".modal__btn_submit"));
+      resetValidation(postModalForm);
     })
     .catch((err) => {
       console.error(`Error adding new card: ${err}`);
     })
     .finally(() => {
-      closeModal(postModal);
-      postModalForm.reset();
-      disableButton(postModalForm.querySelector(".modal__btn_submit"));
-      resetValidation(postModalForm);
-      postModal.querySelector(".modal__btn_submit").textContent = "Submit";
+      submitBtn.textContent = "Submit";
     });
 });
 
