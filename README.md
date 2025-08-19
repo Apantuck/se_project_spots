@@ -27,4 +27,4 @@ https://apantuck.github.io/se_project_spots/index.html
 
 **Video**
 
-(https://drive.google.com/file/d/1SmnMAC3nEKhxY6MSpZSyLcWsSdLZduUT/view?usp=sharing)
+(https://www.loom.com/share/df0b2d6cec58434084ba219d34741e4f?sid=4e87d54b-af9c-4e4b-84dc-872141187e9c)

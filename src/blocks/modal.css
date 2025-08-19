@@ -202,13 +202,13 @@
   background: rgba(33, 33, 33, 0.8);
 }
 
-.modal__btn_save {
+.modal__btn_delete {
   background: rgba(255, 101, 101, 1);
   padding: 18px 32px;
   border: none;
 }
 
-.modal__btn_save:hover {
+.modal__btn_delete:hover {
   background: rgba(255, 51, 51, 1);
 }
 
