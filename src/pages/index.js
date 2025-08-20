@@ -273,7 +273,7 @@ function handleLikeCard(cardElement, cardId) {
 
 function handleDeleteSubmit(evt) {
   evt.preventDefault();
-  const submitBtn = postDeleteModal.querySelector(".modal__btn_save");
+  const submitBtn = postDeleteModal.querySelector(".modal__btn_delete");
   submitBtn.textContent = "Deleting...";
   api
     .deleteCard(selectedCardId)
