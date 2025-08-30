@@ -1,7 +1,7 @@
-const settings = {
+export const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
-  submitBtnSelector: ".modal__submit-btn",
+  submitBtnSelector: ".modal__btn_submit",
   inactiveButtonClass: "modal__btn_disabled",
   inputErrorClass: "modal__input_invalid",
   errorClass: "modal__error_active",
@@ -50,14 +50,13 @@ const toggleButtonState = (config, inputList, btnElement) => {
   }
 };
 
-// "public" button disable function for index.js
-const disableButton = (btnElement) => {
+export const disableButton = (btnElement) => {
   btnElement.classList.add(settings.inactiveButtonClass);
   btnElement.disabled = true;
   console.log("Button disabled");
 };
 
-const resetValidation = (formElement) => {
+export const resetValidation = (formElement) => {
   hideInputError(
     settings,
     formElement,
@@ -81,12 +80,10 @@ const setEventListeners = (config, formElement) => {
   });
 };
 
-const enableValidation = (config) => {
+export const enableValidation = (config) => {
   const formList = document.querySelectorAll(config.formSelector);
 
   formList.forEach((formElement) => {
     setEventListeners(settings, formElement);
   });
 };
-
-enableValidation(settings);
